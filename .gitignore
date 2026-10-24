@@ -1,0 +1,27 @@
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+.DS_Store
+
+# input data pack and organiser files (not redistributed)
+data/
+PACK_README.md
+task1_template.py
+task2_template.py
+
+# packaging and working files
+submission/
+submission.zip
+dashboard/cache/*.pkl
+
+# research: keep only the result files the dashboard reads
+research/*
+!research/t1_results.json
+!research/t2_results.json
+!research/realism.json
+!research/audit/
+research/audit/*
+!research/audit/p1_results.json
