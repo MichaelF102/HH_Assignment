@@ -18,6 +18,17 @@ T2_STOCK_FILE = os.path.join(DATA, 'stocks_daily_train_2021-04-26_2024-06-30.csv
 T2_NIFTY_FILE = os.path.join(DATA, 'nifty50_daily_2021-04-26_2024-06-30.csv')
 
 
+DATA_FILES = [T1_BARS_FILE, T1_EXP_FILE, T2_STOCK_FILE, T2_NIFTY_FILE]
+
+
+def require_data():
+    """Stop the page with a clear message when the input files are not present."""
+    missing = [os.path.relpath(p, ROOT) for p in DATA_FILES if not os.path.exists(p)]
+    if missing:
+        st.error('Input data not found. Add these files to the project root:\n\n' + '\n'.join('- ' + m for m in missing))
+        st.stop()
+
+
 @st.cache_resource(show_spinner='Loading Nifty 15-minute bars...')
 def bars():
     return H.load_bars(T1_BARS_FILE)

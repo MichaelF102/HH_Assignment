@@ -6,8 +6,7 @@ __pycache__/
 .streamlit/secrets.toml
 .DS_Store
 
-# input data pack and organiser files (not redistributed)
-data/
+# organiser files
 PACK_README.md
 task1_template.py
 task2_template.py

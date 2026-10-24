@@ -19,6 +19,7 @@ def page_setup(title, icon=None):
     st.session_state.setdefault('mode', 'Submitted')
     st.session_state.setdefault('store', {})
     st.session_state.setdefault('scn', {})
+    L.require_data()
     global_sidebar()
     st.title(title)
 
